@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.2'
 	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
 	id 'java'
+	id 'war'
 }
 
 group = 'com.crud'
@@ -22,6 +23,8 @@ dependencies {
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.30'
 	testImplementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
 }
 
