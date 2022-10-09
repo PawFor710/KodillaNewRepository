@@ -6,13 +6,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@EnableSwagger2
+
 @EnableScheduling
 @Configuration
 public class CoreConfiguration implements WebMvcConfigurer {
@@ -22,14 +17,7 @@ public class CoreConfiguration implements WebMvcConfigurer {
         return new RestTemplate();
     }
 
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.crud.tasks.controller"))
-                .paths(PathSelectors.any())
-                .build();
-    }
+
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
