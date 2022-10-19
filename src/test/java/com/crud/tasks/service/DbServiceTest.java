@@ -52,7 +52,7 @@ class DbServiceTest {
         dbService.saveTask(task3);
 
         //When
-        Task result = dbService.getTask(126L);
+        Task result = dbService.getTask(131L);
         String title = result.getTitle();
         String content = result.getContent();
 
@@ -75,7 +75,7 @@ class DbServiceTest {
         dbService.saveTask(task2);
         dbService.saveTask(task3);
 
-        dbService.deleteById(132L);
+        dbService.deleteById(137L);
 
         //When
         int result = dbService.getAllTasks().size();
